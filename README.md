@@ -20,8 +20,11 @@ Each 3d object has a "shape", a free 3x4 matrix for as a lineaar transformation 
 As aa result of adding (multile) constraints, a set of linear equtions is ccreated and is solved on the fly.
 A constriant is a projection into the null-space of a transformation associated with the current set of equations.
 
+`constr_dict`
 
 ## Usage
+*   `_defineConstraintFromJSON( JSON.stringify(constr_dict) );`
+*   
 ### The interface
 * The `InterFace` class
 * `InterFace.constraint_samedistance`
@@ -31,6 +34,8 @@ A constriant is a projection into the null-space of a transformation associated 
 
 *  `applySimpleConstraints()`
 
+* `_defineConstraintFromJSON()`
+* 
 * `ConstraintManager` class:
   * `apply()`
   * `new ConstraintManager(constr2, mainModel)`
@@ -38,8 +43,8 @@ A constriant is a projection into the null-space of a transformation associated 
 ### Internals:
 * `CSymbolTable`
 * `optimalLinearProjection`
-* getShapeProperties 
-* setShapeProperties 
+* `getShapeProperties`
+* `setShapeProperties`
 
 ## History
 Written back in 2016, it is using prototype-based OOP (pre- ECMAScript 2015) to be able to run on browsers at the time.
