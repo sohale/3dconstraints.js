@@ -4,7 +4,7 @@ A set of classes and functions to define constrains between 3d objects.
 Enables manipulating objects while they stay synced. Fast and flexible.
 
 When a constrainas is defined between two objecs any of them can be manipulted, and it reflects on the other.
-There is no order or "directionality". The objects are somehoe magically are synced simultaneously.
+There is no order or "directionality". The objects are somehow magically ✨ synced simultaneously, and symultanous with other constriants between all objects that participate in binding constraints in a 3d scene.
 
 The constrians are very general. They are linear, but they can some nooninearity.
 
@@ -16,7 +16,7 @@ Written in vanilla JavaScript.. The only library used is `numericjs`.
 
 Dependencies:
 * [`numeric-1.2.6.js`](http://www.numericjs.com/lib/numeric-1.2.6.js)
-* Suggestion : https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js
+* Suggested [cdn](https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js).
 * ThreeJS r79+ (not a dependency, but recommended)
 
 ### Video demonstration (coming soon)
