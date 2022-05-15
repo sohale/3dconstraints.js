@@ -96,6 +96,8 @@ The DSL:
 `m11`
 
 ### Internals:
+* CEqFactory
+  * `CEqFactory.make` = `function (type, vars, offset, shapes_idx)`
 * `CSymbolTable`
 * `optimalLinearProjection`
 * `getShapeProperties`

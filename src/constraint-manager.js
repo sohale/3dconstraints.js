@@ -1,5 +1,8 @@
 'use strict';
 
+/**
+ * The `ConstraintManager` class
+*/
 var ConstraintManager = function (constr2, mainModel) {
 
   //Is there a reason why the following is not a member?
