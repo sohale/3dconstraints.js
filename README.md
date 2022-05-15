@@ -14,6 +14,14 @@ Written in vanilla JavaScript with no dependency to external libraaries.
 
 Each 3d object has a "shape", a free 3x4 matrix for as a lineaar transformation matrix.
 
+### Video dmostation (comoing soon)
+
+### How it works
+As aa result of adding (multile) constraints, a set of linear equtions is ccreated and is solved on the fly.
+A constriant is a projection into the null-space of a transformation associated with the current set of equations.
+
+
+## Usage
 ### The interface
 * The `InterFace` class
 * `InterFace.constraint_samedistance`
