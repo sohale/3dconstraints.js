@@ -17,25 +17,27 @@ Each 3d object has a "shape", a free 3x4 matrix for as a lineaar transformation 
 ### Video dmostation (comoing soon)
 
 ### How it works
-As aa result of adding (multile) constraints, a set of linear equtions is ccreated and is solved on the fly.
+As a result of adding (multile) constraints, a set of linear equtions is ccreated and is solved on the fly.
 A constriant is a projection into the null-space of a transformation associated with the current set of equations.
 
 `constr_dict`
 
 ## Usage
-*   `_defineConstraintFromJSON( JSON.stringify(constr_dict) );`
-*   
+*   `CONSTRAINTS.defineConstraintFromJSON(JSON.stringify(constr_dict))`
+
 ### The interface
+* The `CONSTRAINTS` object
+  * method: `defineConstraintFromJSON()`
 * The `InterFace` class
-* `InterFace.constraint_samedistance`
-* `InterFace.dancePartnersMultiple`
-* `InterFace.dancePartners2`
-* `InterFace.defineConstraint_default` (deprecated)
+  * `InterFace.constraint_samedistance`
+  * `InterFace.dancePartnersMultiple`
+  * `InterFace.dancePartners2`
+  * `InterFace.defineConstraint_default` (deprecated)
 
 *  `applySimpleConstraints()`
 
 * `_defineConstraintFromJSON()`
-* 
+
 * `ConstraintManager` class:
   * `apply()`
   * `new ConstraintManager(constr2, mainModel)`
