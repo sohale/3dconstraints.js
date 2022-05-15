@@ -3,18 +3,21 @@
 A set of classes and functions to define constrains between 3d objects.
 Enables manipulating objects while they stay synced. Fast and flexible.
 
-When a constrainas is defined between two objecs any ofo them caan be manipulted, and it reflects on the other.
-There is no directionality.
+When a constrainas is defined between two objecs any of them can be manipulted, and it reflects on the other.
+There is no order or "directionality". The objects are somehoe magically are synced simultaneously.
 
-The constrians are very general. They are linear, but they can some nooninearity. 
+The constrians are very general. They are linear, but they can some nooninearity.
 
-Suitable for web-based interactive 3d editing software. Originally written for ThreeJS. [^1]
-
-Written in vanilla JavaScript with no dependency to external libraaries.
+Suitable for web-based interactive 3d editing software. Originally written for ThreeJS-based software. [^1]
 
 Each 3d object has a "shape", a free 3x4 matrix for as a lineaar transformation matrix.
 
+Written in vanilla JavaScript.. The only library used is `numericjs`.
 
+Dependencies:
+* [`numeric-1.2.6.js`](http://www.numericjs.com/lib/numeric-1.2.6.js)
+* Suggestion : https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js
+* ThreeJS r79+ (not a dependency, but recommended)
 
 ### Video demonstration (coming soon)
 
