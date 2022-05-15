@@ -12,13 +12,28 @@ Suitable for web-based interactive 3d editing software.
 
 Written in vanilla JavaScript with no dependency to external libraaries.
 
+Each 3d object has a "shape", a free 3x4 matrix for as a lineaar transformation matrix.
 
-Ech object has a free 3x4 matrix for as a lineaar transformation matrix.
+### The interface
+* The `InterFace` class
+* `InterFace.constraint_samedistance`
+* `InterFace.dancePartnersMultiple`
+* `InterFace.dancePartners2`
+* `InterFace.defineConstraint_default` (deprecated)
 
+*  `applySimpleConstraints()`
 
+* `ConstraintManager` class:
+  * `apply()`
+  * `new ConstraintManager(constr2, mainModel)`
+  
+### Internals:
+* `CSymbolTable`
 * `optimalLinearProjection`
-* `ConstraintManager`
+* getShapeProperties 
+* setShapeProperties 
 
+## History
 Written back in 2016, it is using prototype-based OOP (pre- ECMAScript 2015) to be able to run on browsers at the time.
 
 Keywords: Linear Algebra, SVD, 3D, affine
