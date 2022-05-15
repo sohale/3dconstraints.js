@@ -14,13 +14,20 @@ Written in vanilla JavaScript with no dependency to external libraaries.
 
 Each 3d object has a "shape", a free 3x4 matrix for as a lineaar transformation matrix.
 
-### Video dmostation (comoing soon)
+
+
+### Video demonstration (coming soon)
 
 ### How it works
 As a result of adding (multile) constraints, a set of linear equtions is ccreated and is solved on the fly.
 A constriant is a projection into the null-space of a transformation associated with the current set of equations.
 
 `constr_dict`
+
+Example constraint set:
+A constraint set is a set of reuqaions (lines) eaach define a free-form linear reltionship between aattriutes. Note that the constrians may not be linear, eg in cse where the Eulerian angles aare constrained.
+`obj0.x - obj1.x = delta_x`
+`obj0.y - obj1.x = delta2`
 
 ## Usage
 Example usage:
