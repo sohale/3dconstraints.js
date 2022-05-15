@@ -53,19 +53,6 @@ function applyConstraints(tree, listOfShapes)
 }
 
 
-function removeSelected_old()
-{
-    assert(0, "Never call this.")
-    if(theConstraint)
-        theConstraint.removeAllInvolvedConstraints( objListFromMeshes(currentMeshes) );
-	for (var i = currentMeshes.length-1; i > -1; i--)
-		removeShape(currentMeshes[i].parentShape);
-
-	updateScene();
-	initTreeViewer();
-}
-
-
 function removeSelected()
 {
 
