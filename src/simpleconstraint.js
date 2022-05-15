@@ -367,6 +367,8 @@ var constr2_ = [new C_AttachAngle("ax", 0,1), new C_AttachAngle("ay", 0,1), new 
 //var constr2_ = [new C_AttachScale("lsx",2.0, 0,1),new C_AttachScale("lsy",2.0, 0,1),new C_AttachScale("lsz",2.0, 0,1)];
 //Works!
 
+// *******************************************
+// src/symbol-table.js
 
 
 /////////////
