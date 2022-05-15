@@ -3,14 +3,15 @@
 function applyConstraints(tree, listOfShapes)
 {
     _expect(tree == mainModel.getRoot());
-	var constraintDims = CONFIG.printer.printer_strict_bounds;
-	updateRoot();
-    if(theConstraint)
+    var constraintDims = CONFIG.printer.printer_strict_bounds;
+    updateRoot();
+    if(theConstraint) {
         theConstraint.apply();
+    }
 
 	for (var i in tree.sons)
 	{
-		var obj = tree.sons[i];
+	var obj = tree.sons[i];
         var bbox = obj.getBoundingBox_(false);
         /*var obj_min = [bbox.min.x, bbox.min.y, bbox.min.z];
         var obj_max = [bbox.max.x, bbox.max.y, bbox.max.z];*/
@@ -60,10 +61,8 @@ function removeSelected_old()
 	for (var i = currentMeshes.length-1; i > -1; i--)
 		removeShape(currentMeshes[i].parentShape);
 
-
 	updateScene();
 	initTreeViewer();
-    //don't forget to pushState later //<- keep this comment
 }
 
 
