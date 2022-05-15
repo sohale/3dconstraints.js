@@ -1,7 +1,7 @@
 # 3dconstraints.js
 
 A set of classes and functions to define constrains between 3d objects.
-Enables manipulating objects while they stay synced.
+Enables manipulating objects while they stay synced. Fsat and flexible.
 
 When a constrainas is defined between two objecs any ofo them caan be manipulted, and it reflects on the other.
 There is no directionality.
@@ -41,7 +41,34 @@ A constriant is a projection into the null-space of a transformation associated 
 * `ConstraintManager` class:
   * `apply()`
   * `new ConstraintManager(constr2, mainModel)`
-  
+
+The DSL:
+* Attibutes:
+`x`
+`y`
+`z`
+`sx`
+`sy`
+`sz`
+`ax`
+`ay`
+`az`
+`lsx`
+`lsy`
+`lsz`
+`m0`
+`m1`
+`m2`
+`m3`
+`m4`
+`m5`
+`m6`
+`m7`
+`m8`
+`m9`
+`m10`
+`m11`
+ 
 ### Internals:
 * `CSymbolTable`
 * `optimalLinearProjection`
