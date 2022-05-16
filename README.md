@@ -15,8 +15,7 @@ Each 3d object has a "shape", a free 3x4 matrix for as a lineaar transformation 
 Written in vanilla JavaScript.. The only library used is `numericjs`.
 
 Dependencies:
-* [`numeric-1.2.6.js`](http://www.numericjs.com/lib/numeric-1.2.6.js)
-* Suggested [cdn](https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js).
+* https://github.com/sloisel/numeric [`numeric-1.2.6.js`](http://www.numericjs.com/lib/numeric-1.2.6.js). [cdn](https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js).
 * ThreeJS r79+ (not a dependency, but recommended)
 
 ### Video demonstration (coming soon)
@@ -29,9 +28,43 @@ A constriant is a projection into the null-space of a transformation associated 
 
 Example constraint set:
 A constraint set is a set of reuqaions (lines) eaach define a free-form linear reltionship between aattriutes. Note that the constrians may not be linear, eg in cse where the Eulerian angles aare constrained.
-`obj0.x - obj1.x = delta_x`
-`obj0.y - obj1.x = delta2`
+```javascript
+obj0.x = 10.0 + obj1.x
+obj0.y - obj1.x = 5.0
+obj0.xsize = 0.4 * obj1.xsize
+```
 
+
+| x       |      y |     x  | log(xs) | log(ys)|  | constant | | equation |
+| ------- | ------ | ------ | --------| -------|---|----------|--|--|
+| `obj0.` | `obj0.`| `obj1.`| `obj0.` | `obj1.`|  | scalar   | | |
+| x       |      y |     x  | log(xs) | log(ys)|  | constant | | |
+|         |        |        |         |        |   |          | | |
+|     +1  |        |    -1  |        |        | =  |  10.0    | |1 obj0.x - 1obj1.x = 10.0 |
+|         |   +1   |   -1    |         |        |   |  5.0        | |  1obj0.y -1obj1.x = 5.0 |
+|         |        |        |    1     |   -1     |   |  log(0.4)        | |  log(obj0.xsize) - log( obj1.xsize) = log(0.4)|
+
+Then it is solved by solving the linear equation `Ax=b`.
+A =
+| 0.x  |  0.y |   1.x     | 0.lsx | 1.lsy |  |  |
+| ------- | ------ | ------ | --------| -------|---|----------|
+|         |        |        |         |        |   |          |
+|     +1  |        |    -1  |        |        | =  |  10.0    |
+|         |   +1   |   -1    |         |        | =  |  5.0        |
+|         |        |        |    1     |   -1     | =  |  -0.398        |
+
+```text
+    ⎡1  0  -1  0  0 ⎤
+    ⎢               ⎥
+A = ⎢0  1  -1  0  0 ⎥
+    ⎢               ⎥
+    ⎣0  0  0   1  -1⎦
+
+b = [10.0  5.0  -0.916].T
+```
+
+And it solves an solution for `Ax=b`.
+Note that the answer is not unique. In fact, we project `x` into the subspace `Ax-b=0`.
 ## Usage
 Example usage:
 *   `CONSTRAINTS.defineConstraintFromJSON(JSON.stringify(constr_dict))`
