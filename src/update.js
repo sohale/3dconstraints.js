@@ -1,3 +1,5 @@
+'use strict';
+
 // excerpt
 
 function applyConstraints(tree, listOfShapes)

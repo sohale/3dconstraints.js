@@ -1,3 +1,5 @@
+'use strict';
+
 function decomposeMatrix(m) {
 
   var m = m.slice(0);

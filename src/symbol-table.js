@@ -1,3 +1,4 @@
+'use strict';
 
 function CSymbolTable(constr2, unique_bigindices_list) {
   this.makeSymboleTable(constr2, unique_bigindices_list);

@@ -1,3 +1,4 @@
+'use strict';
 /**
  * author: Sohail Siadat
  */

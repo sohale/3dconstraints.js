@@ -1,3 +1,5 @@
+'use strict';
+
 /*
     Defines one line of constraint in form of:
         obj0.x - obj1.x = delta_x

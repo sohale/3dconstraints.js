@@ -1,4 +1,5 @@
-//This is a draft. To implement it, start from a clean new js file.
+'use strict';
+//This is was a draft early version. To implement it, start from a clean new js file.
 //function Constraints(){}
 
 function SymbolTable(tree){

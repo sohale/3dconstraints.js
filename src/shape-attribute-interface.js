@@ -1,3 +1,5 @@
+'use strict';
+
 /*
   old: XYZSSSAAA representation where AAA is EulerXYZ
 
