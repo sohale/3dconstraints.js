@@ -64,8 +64,8 @@ And it solves an solution for `Ax=b`.
 Note that the answer is not unique. In fact, we project `x` into the subspace `Ax-b=0`.
 
 Since this method uses linear algebra, although it seems linear, but it proovides a powerful generalised tool to define constriants that are not necessarily linear.
-The coefficients can be other than +1,-1. The variables can be angle or scale (as long as they take a separate degree of freedom, any non-linear attribute can be mixed).
-The constrians can span across many multiple object. Each provide separate aattriutes..
+The coefficients can be other than +1,-1. The variables can be angle or scale (as long as they take a separate degree of freedom, any non-linear attribute can be mixed). In fact any attribue nonlinear to the matrix can be used as long as it is a reversible nonlinear transformation. `lsx := log(size.x), size.x := 10 ^ lsx` as long as `applyShapeAttribute` and `getShapeAttribute` is defined for them.
+The constraints can span across many multiple object. Each provide separate aattriutes..
 
 Future work: This type of approach is generalisable. Soolcing, non-linear equations (and projections into nonlinear nulspaces) that are beyond `Ax-b=0` cab be solved numerically.
 ## Usage
@@ -90,7 +90,9 @@ function applySimpleConstraints(){
   * `.dancePartnersMultiple()`
   * `.dancePartners2()`
   * `.defineConstraint_default()` (deprecated)
-#### Constraints classes
+### Constraints classes
+Any constraint class (eg `C_AttachLocation`) needs to implement methods `.getARow()` `.getB()` `.getAttribs()`, which provide a "row" in above-mentioned matrices `A` and `b`.
+
 Each fo the following define objects that attache attributes (locations,etc) between two given objects:
 * `C_AttachLocation` : Attaches location: X ⃗1 = X ⃗2 + d ⃗ . Imposes a relative position d ⃗
 * `C_AttachAngle` Attaches angles: Attaaches Euler's angles (θ,φ)
@@ -136,8 +138,8 @@ The DSL:
   * `CEqFactory.make` = `function (type, vars, offset, shapes_idx)`
 * `CSymbolTable`
 * `optimalLinearProjection`
-* `getShapeProperties`
-* `setShapeProperties`
+* `getShapeAttribute`
+* `applyShapeAttribute`
 
 ## History
 Written back in 2016, it is using prototype-based OOP (pre- ECMAScript 2015) to be able to run on browsers at the time.
