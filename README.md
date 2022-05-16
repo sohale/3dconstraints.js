@@ -35,32 +35,29 @@ obj0.xsize = 0.4 * obj1.xsize
 ```
 
 
-| x       |      y |     x  | log(xs) | log(ys)|  | constant | | equation |
+| `obj0.`<br/>x | `obj0.`<br/> y| `obj1.`<br/>x | `obj0.` <br/>log(xs)| `obj1.` <br/> log(ys) |  | scalar <br/>constant   | | equation |
 | ------- | ------ | ------ | --------| -------|---|----------|--|--|
-| `obj0.` | `obj0.`| `obj1.`| `obj0.` | `obj1.`|  | scalar   | | |
-| x       |      y |     x  | log(xs) | log(ys)|  | constant | | |
-|         |        |        |         |        |   |          | | |
-|     +1  |        |    -1  |        |        | =  |  10.0    | |1 obj0.x - 1obj1.x = 10.0 |
-|         |   +1   |   -1    |         |        |   |  5.0        | |  1obj0.y -1obj1.x = 5.0 |
-|         |        |        |    1     |   -1     |   |  log(0.4)        | |  log(obj0.xsize) - log( obj1.xsize) = log(0.4)|
+|     +2  |        |    -1  |        |        | =  |  10.0    | | 2*obj0.x - obj1.x = 10.0 |
+|         |   +1   |   -1    |         |        |   |  5.0        | |  obj0.y -obj1.x = 5.0 |
+|         |        |        |    1     |   -1     |   |  log(0.4)        | |  log(obj0.xsize) - log( obj1.xsize) = -0.3979|
 
 Then it is solved by solving the linear equation `Ax=b`.
 A =
 | 0.x  |  0.y |   1.x     | 0.lsx | 1.lsy |  |  |
 | ------- | ------ | ------ | --------| -------|---|----------|
 |         |        |        |         |        |   |          |
-|     +1  |        |    -1  |        |        | =  |  10.0    |
+|     +2  |        |    -1  |        |        | =  |  10.0    |
 |         |   +1   |   -1    |         |        | =  |  5.0        |
-|         |        |        |    1     |   -1     | =  |  -0.398        |
+|         |        |        |    1     |   -1     | =  | -0.3979       |
 
 ```text
-    ⎡1  0  -1  0  0 ⎤
+    ⎡2  0  -1  0  0 ⎤
     ⎢               ⎥
 A = ⎢0  1  -1  0  0 ⎥
     ⎢               ⎥
     ⎣0  0  0   1  -1⎦
 
-b = [10.0  5.0  -0.916].T
+b = [10.0  5.0  -0.3979].T
 ```
 
 And it solves an solution for `Ax=b`.

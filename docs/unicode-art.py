@@ -9,7 +9,7 @@ A = sympy.Matrix([
 
 sympy.pprint(A, use_unicode=True)
 
-b = sympy.Matrix([ 10.0, 5.0, log(0.4)])
+b = sympy.Matrix([ 10.0, 5.0, sympy.simplify(log(0.4, 10.0))])
 sympy.pprint(b.T, use_unicode=True)
 
 [x0,	y0,	x1,	lsx0,	lsy0] = symbols("x0	y0	x1	lsx0	lsy0")
