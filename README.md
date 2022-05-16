@@ -62,6 +62,12 @@ b = [10.0  5.0  -0.3979].T
 
 And it solves an solution for `Ax=b`.
 Note that the answer is not unique. In fact, we project `x` into the subspace `Ax-b=0`.
+
+Since this method uses linear algebra, although it seems linear, but it proovides a powerful generalised tool to define constriants that are not necessarily linear.
+The coefficients can be other than +1,-1. The variables can be angle or scale (as long as they take a separate degree of freedom, any non-linear attribute can be mixed).
+The constrians can span across many multiple object. Each provide separate aattriutes..
+
+Future work: This type of approach is generalisable. Soolcing, non-linear equations (and projections into nonlinear nulspaces) that are beyond `Ax-b=0` cab be solved numerically.
 ## Usage
 Example usage:
 *   `CONSTRAINTS.defineConstraintFromJSON(JSON.stringify(constr_dict))`
