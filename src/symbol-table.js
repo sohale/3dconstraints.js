@@ -46,6 +46,7 @@ CSymbolTable.prototype.getEquationIndex = function (small_index, attribName)
   throw "Mathcing attribute not found [" + small_index + "," + attribName + "]";
 };
 /**
+ * A binding (to an object), is a variable in the equations.
  * Each attribute is a symbole, i.e. like smallindex."ax"
  * = this.s[idx]
  * @return     {list}  { [small_index, attibute_name, big_index] }

@@ -893,3 +893,7 @@ function setPrimitiveAngles(shape, ax, ay, az) {
   var delta_az = az - ang.z;
   Api.rotate(delta_ax, delta_ay, delta_az, objListFromMeshes(currentMeshes));
 }
+
+if (module) {
+    module.exports = {CONSTRAINTS, InterFace};
+}

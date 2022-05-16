@@ -1,5 +1,5 @@
 'use strict';
-//This is was a draft early version. To implement it, start from a clean new js file.
+//This is was a draft unimplementd early version (just typed on keyboard, as a blueprint). To implement it, I started from a clean new js file.
 //function Constraints(){}
 
 function SymbolTable(tree){
@@ -17,6 +17,7 @@ SymbolTable.properties.getShapeName = function(tree, shapeObj)
     return name;
     throw "Shape not found in tree";
 }
+
 function parseAttribute(tree, fullAttribName)
 {
     //parseName
