@@ -859,50 +859,17 @@ var getShapesFromIndlList = function (target) {
   return targetShapes;
 };
 
-//function getFirstMeshAboveShape(shape){} //<- for highlight
-//function forcedGetMesh(shape){} //<- gets a mesh for displayand adds it to the scene if it does not extst. but it is not clickable.  //<-for highlighting
+/*
+  old: XYZSSSAAA representation where AAA is EulerXYZ
 
-/*
-//XYZSSSAAA system where AAA is EulerXYZ
-getShapeProperty = function(shape, attrib){
-    switch(attrib){
-        case 'x': return shape.center.x;
-        case 'y': return shape.center.y;
-        case 'z': return shape.center.z;
-        case 'w': return shape.getLength(); //see getDimsAndCenterOfSelectedObject()
-        case 'l': return shape.getWidth();
-        case 'h': return shape.getHeight();
-        case 'ax':
-        case 'ay':
-        case 'az':
-        default: console.error("Unrecognised switch case.");
-    }
-}
+    case 'w': return shape.getLength(); //see getDimsAndCenterOfSelectedObject()
+    case 'l': return shape.getWidth();
+    case 'h': return shape.getHeight();
+    case 'ax':
+    case 'ay':
+    case 'az':
 */
-//Three methods: attribute name,
-/*
-var _getShapeProperties = function (shape) {
-  var d = decomposeMatrix(shape.matrix);
-  //d: {translation: Vector3D, scale: Vector3D, rotation: Vector3D}
-  return [
-    d.translation.x,
-    d.translation.y,
-    d.translation.z,
-    d.scale.x,
-    d.scale.y,
-    d.scale.z,
-    d.rotation.x,
-    d.rotation.y,
-    d.rotation.z,
-  ];
-  /*
-  return [
-      shape.center.x, shape.center.y, shape.center.z,
-      shape.getLength(), shape.getWidth(), shape.getHeight(),
-      shape.angle.x, shape.angle.y, shape.angle.z];
-  */
-  //see getDimsAndCenterOfSelectedObject()
-};
+
 
 // old name: getShapeProperties
 var getShapeAttribute = function (shape, attrib) {
