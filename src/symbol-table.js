@@ -117,7 +117,7 @@ CSymbolTable.prototype.setVFromShapes = function (total_shape3d_list, v) {
   for(var i=0;i<this.s.length;i++){
       var small_idx= this.s[i][0];
       var attrib_name = this.s[i][1];
-      v[i] = getShapeProperties(sh[small_idx],attrib_name);
+      v[i] = getShapeAttribute(sh[small_idx],attrib_name);
   }
   assert(v.length == this.getAttribList().length);
   */
@@ -135,7 +135,7 @@ CSymbolTable.prototype.setVFromShapes = function (total_shape3d_list, v) {
     _expect(shape3d, "No Shape3d with this index", sh_index);
     */
     var shape3d = total_shape3d_list[small_idx];
-    v[vari] = getShapeProperties(shape3d, attr_name);
+    v[vari] = getShapeAttribute(shape3d, attr_name);
   }
 };
 CSymbolTable.prototype.setShapesFromV = function (total_shape3d_list, v) {
@@ -150,7 +150,7 @@ CSymbolTable.prototype.setShapesFromV = function (total_shape3d_list, v) {
       if(!(ctr<v.length))
           console.log("oh no");
       assert(ctr<v.length);
-      setShapeProperties(sh[small_idx], attrib_name, v[ctr]);
+      applyShapeAttribute(sh[small_idx], attrib_name, v[ctr]);
       ctr++;
   }
   */
@@ -159,6 +159,6 @@ CSymbolTable.prototype.setShapesFromV = function (total_shape3d_list, v) {
     var attr = this.lookupAttrib(vari);
     var small_idx = attr[0]; // small index
     var attr_name = attr[1];
-    setShapeProperties(total_shape3d_list[small_idx], attr_name, v[vari]);
+    applyShapeAttribute(total_shape3d_list[small_idx], attr_name, v[vari]);
   }
 };

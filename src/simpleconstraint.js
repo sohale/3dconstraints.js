@@ -686,7 +686,7 @@ InterFace.constraint_samedistance = function () {
       var sh1 = shape_index_list[pi];
       var sh2 = shape_index_list[pi + 1];
       var vars = _repeat_string(allvars[vi], 2);
-      var diff_x = getShapeProperties(shape3d_list[pi], vars[0]) - getShapeProperties(shape3d_list[pi + 1], vars[1]);
+      var diff_x = getShapeAttribute(shape3d_list[pi], vars[0]) - getShapeAttribute(shape3d_list[pi + 1], vars[1]);
       constr_dict.push({
         shapes_idx: [sh1, sh2],
         type: "AttachLocation",
@@ -880,7 +880,7 @@ getShapeProperty = function(shape, attrib){
 }
 */
 //Three methods: attribute name,
-
+/*
 var _getShapeProperties = function (shape) {
   var d = decomposeMatrix(shape.matrix);
   //d: {translation: Vector3D, scale: Vector3D, rotation: Vector3D}
@@ -903,7 +903,9 @@ var _getShapeProperties = function (shape) {
   */
   //see getDimsAndCenterOfSelectedObject()
 };
-var getShapeProperties = function (shape, attrib) {
+
+// old name: getShapeProperties
+var getShapeAttribute = function (shape, attrib) {
   assert(shape);
   var d = decomposeMatrix(shape.matrix);
   switch (attrib) {
@@ -990,7 +992,9 @@ var _const_log10 = Math.log(10);
 function exp10(x) {
   return Math.exp(x * _const_log10);
 }
-var setShapeProperties = function (shape, attrib, value) {
+// "apply" the given attribute
+// old name: setShapeProperties
+var applyShapeAttribute = function (shape, attrib, value) {
   //var dims = getDimsAndCenterOfSelectedObject()[0]; //terrible very inefficient
   assert(!isNaN(value));
   //assert(["lsx","lsy","lsz"].indexOf(attrib)==-1);

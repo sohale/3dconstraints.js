@@ -204,7 +204,7 @@ ConstraintManager.prototype.getValues = function () {
   //console.log(sh);
   //numeric.
   //return [sh[0].x,sh[1].y, 1];
-  //return [getShapeProperties(sh[0],"x"), getShapeProperties(sh[1],"y"), 1.0]; //for numericJS
+  //return [getShapeAttribute(sh[0],"x"), getShapeAttribute(sh[1],"y"), 1.0]; //for numericJS
   //var a=this.getAttribList(); //[[0,"x"],[1,"y"]];
   /*
     this.symbolTable = new CSymbolTable();
@@ -243,13 +243,13 @@ ConstraintManager.prototype.setValues = function (v) {
         if(!(ctr<v.length))
             console.log("oh no");
         assert(ctr<v.length);
-		setShapeProperties(sh[sh_idx], attrib_name, v[ctr]);
+		applyShapeAttribute(sh[sh_idx], attrib_name, v[ctr]);
 		ctr++;
 	}
     */
   this.symbolTable.setShapesFromV(this.shape3d_list, v);
-  //setShapeProperties(sh[0],"x", v[0]);
-  //setShapeProperties(sh[1],"y", v[1]);
+  //applyShapeAttribute(sh[0],"x", v[0]);
+  //applyShapeAttribute(sh[1],"y", v[1]);
 };
 ConstraintManager.prototype.apply = function () {
   if (!this.shape3d_list)
